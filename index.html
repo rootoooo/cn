@@ -9,9 +9,7 @@
   <meta name="copyright" content="网易，NetEase Inc.">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>皮皮虾</title>
-  <!-- Favicon -->
-  <link rel="icon" href="image/retrotv_5520.png">
-  <link rel="apple-touch-icon" href="image/retrotv_5520.png">
+  <link rel="icon" type="image/jpg" href="https://im.gurl.eu.org/file/AgACAgEAAxkDAAIUUWd_xyKFSvPJ2QIkbc5QMCd79gWiAAL_rTEbl5EBRDBGmoz44374AQADAgADeAADNgQ.jpg" />
   <style>
     .form-control:hover {
       border: 1px solid #66be8c;
@@ -72,7 +70,7 @@
       <button type="button" class="btn btn-danger clear">清空</button>
     </div>
   </div>
-  <script src="./convert.js"></script> <!-- 这里需要确保 convert.js 文件正确存在 -->
+  <script src="./convert.js"></script>
   <script>
     let textarea = document.getElementById('txt');
     document.getElementById('app').addEventListener('click', function(e) {
@@ -82,7 +80,7 @@
       if(classList.contains('convert')) {
         let type = target.dataset.type;
         let words = textarea.value;
-        textarea.value = convert(words, type); // 调用 convert.js 中的 convert 函数
+        textarea.value = convert(words, type);
       // 清空
       } else if(classList.contains('clear')) {
         textarea.value = '';
