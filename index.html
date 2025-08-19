@@ -7,44 +7,39 @@
   <meta name="description" content="简繁体字转换工具">
   <meta name="author" content="网易，NetEase Inc.">
   <meta name="copyright" content="网易，NetEase Inc.">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>皮皮虾</title>
   <link rel="icon" type="image/jpg" href="https://haoss.eu.org/ppx.jpg" />
   <style>
-    。form-control:hover {
-      border: 1px solid #66be8c;
-    }
-
+    /* 简化选择器，避免重复的类名 */
     textarea.form-control {
-      padding: 0 10px;
       width: 90%;
       margin: 0 auto;
+      padding: 6px 12px;
       border: 1px solid #ddd;
       border-radius: 3px;
+      font-size: 14px;
       box-sizing: content-box;
       display: block;
-      padding: 6px 12px;
-      font-size: 14px;
     }
 
-    。toolbar {
+    textarea.form-control:hover {
+      border-color: #66be8c;
+    }
+
+    .toolbar {
       padding: 1em 0;
       text-align: center;
     }
 
-    。btn {
-      display: inline-block;
+    .btn {
       padding: 6px 12px;
-      margin-bottom: 0;
       font-size: 14px;
       font-weight: 400;
       line-height: 1.42857143;
       text-align: center;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
       border: 1px solid transparent;
       border-radius: 4px;
+      cursor: pointer;
       margin: 0.5em 0;
     }
 
@@ -70,22 +65,22 @@
       <button type="button" class="btn btn-danger clear">清空</button>
     </div>
   </div>
+  
   <script src="./convert.js"></script>
   <script>
-    let textarea = document.getElementById('txt');
     document.getElementById('app').addEventListener('click', function(e) {
-      let target = e.target;
-      let classList = target.classList;
-      // 转换
-      if(classList.contains('convert')) {
-        let type = target.dataset.type;
-        let words = textarea.value;
+      const target = e.target;
+      const classList = target.classList;
+      const textarea = document.getElementById('txt');
+      
+      if (classList.contains('convert')) {
+        const type = target.dataset.type;
+        const words = textarea.value;
         textarea.value = convert(words, type);
-      // 清空
-      } else if(classList.contains('clear')) {
+      } else if (classList.contains('clear')) {
         textarea.value = '';
       }
-    }, false);
+    });
   </script>
 </body>
 </html>
